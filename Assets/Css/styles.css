@@ -1,12 +1,11 @@
-/*=============== GOOGLE FONTS ===============*/
+/*  ===== ========== Google Fonts ========== =====   */
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap');
 
-/*=============== VARIABLES CSS ===============*/
 :root {
   --header-height: 5rem;
 
-  /*========== Colors ==========*/
-  /*Color mode HSL(hue, saturation, lightness)*/
+  /*   ===== Colors =====   */
+
   --first-hue: 258;
   --second-hue: 225;
   --first-color: hsl(var(--first-hue), 54%, 48%);
@@ -16,8 +15,10 @@
   --body-color: hsl(var(--first-hue), 60%, 98%);
   --container-color: #fff;
 
-  /*========== Font and typography ==========*/
-  /*.5rem = 8px | 1rem = 16px ...*/
+/*   ===== Typography =====   */
+
+/*.5rem = 8px | 1rem = 16px ...*/
+
   --body-font: 'Jost', sans-serif;
   --biggest-font-size: 4.25rem;
   --h1-font-size: 2.25rem;
@@ -27,17 +28,20 @@
   --small-font-size: .875rem;
   --smaller-font-size: .813rem;
 
-  /*========== Font weight ==========*/
+/*   ===== Font weight =====   */
+
   --font-light: 300;
   --font-medium: 500;
   --font-semibold: 600;
 
-  /*========== z index ==========*/
+/*   ===== z index =====   */
+
   --z-tooltip: 10;
   --z-fixed: 100;
 }
 
-/* Responsive typography */
+/*   ===== Responsive typography =====   */
+
 @media screen and (max-width: 1024px) {
   :root {
     --biggest-font-size: 2.75rem;
@@ -50,141 +54,391 @@
   }
 }
 
-/*=============== BASE ===============*/
-* {
+/*  ===== ========== Base ========== =====   */
+
+*
+{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html {
+html
+{
   scroll-behavior: smooth;
 }
 
-body,
-button,
-input,
-textarea {
+body, button, input, textarea
+{
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
 }
 
-body {
+body
+{
   background-color: var(--body-color);
   color: var(--text-color);
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3
+{
   color: var(--title-color);
   font-weight: var(--font-semibold);
 }
 
-ul {
+ul
+{
   list-style: none;
 }
 
-a {
+a
+{
   text-decoration: none;
 }
 
-p {
+p
+{
   line-height: 1.6rem;
   text-align: justify;
 }
 
-button {
+button
+{
   cursor: pointer;
   border: none;
   outline: none;
 }
 
-img {
+img
+{
   max-width: 100%;
   height: auto;
   border-radius: .75rem;
 }
 
-/*=============== REUSABLE CSS CLASSES ===============*/
-.container {
+/*  ===== ========== Css Classes ========== =====   */
+
+.container
+{
   max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.grid {
+.grid
+{
   display: grid;
 }
 
-.section {
+.section
+{
   padding: 8rem 0 2rem;
 }
 
-.section__subtitle,
-.section__title {
+.section__subtitle, .section__title
+{
   text-align: center;
 }
 
-.section__title {
+.section__title
+{
   font-size: var(--h1-font-size);
   color: var(--first-color);
   margin-bottom: 3rem;
 }
 
-.section__subtitle {
+.section__subtitle
+{
   display: block;
 }
 
-/*=============== HEADER & NAV===============*/
+/*  ===== ========== Header ========== =====   */
+
+.header
+{
+  width: 100%;
+  background-color: var(--container-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+}
+
+.nav
+{
+  height: calc(var(--header-height) + 2.5rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 3rem;
+}
+
+.nav__logo
+{
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav__list
+{
+  display: flex;
+  column-gap: 2rem;
+}
+
+.nav__link
+{
+  position: relative;
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  transition: .4s;
+  -webkit-transition: .4s;
+  -moz-transition: .4s;
+  -ms-transition: .4s;
+  -o-transition: .4s;
+}
+
+.nav__link:hover
+{
+  color: var(--first-color);
+}
+
+.nav__close, .nav__toggle
+{
+  color: var(--title-color);
+}
+
+.nav__toggle
+{
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.nav__close, .nav__toggle
+{
+  display: none;
+}
+
+/*   ===== Active link =====   */
+
+.nav__link:hover::before, .nav__link::before
+{
+  content: '';
+  position: absolute;
+  bottom: -.5rem;
+  width: 0;
+  left: 0;
+  height: 2px;
+  background-color: var(--first-color);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  transition: .4s;
+  -webkit-transition: .4s;
+  -moz-transition: .4s;
+  -ms-transition: .4s;
+  -o-transition: .4s;
+}
+
+.nav__link:hover::before, .active__link::before
+{
+  width: 30px;
+}
+
+.active__link
+{
+  color: var(--first-color);
+}
 
 
-/* Active link */
+/*   ===== Change background header =====   */
 
 
-/* Change background header */
+/*  ===== ========== Home ========== =====   */
 
+.home
+{
+  padding: 12.5rem 0 2rem;
+}
 
-/*=============== HOME ===============*/
+.home__container
+{
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2rem;
+}
 
+.home__title, .home__subtitle
+{
+  font-size: var(--biggest-font-size);
+  line-height: 68px;
+  font-weight: var(--font-light);
+}
 
-/*=============== BUTTONS ===============*/
+.home__title
+{
+  margin-bottom: 2rem;
+}
 
+.home__subtitle
+{
+  margin-bottom: .75rem;
+}
 
-/*=============== ABOUT ===============*/
+.home__title span
+{
+  font-weight: var(--font-medium);
+}
 
+.home__buttons
+{
+  display: flex;
+  flex-direction: column;
+  row-gap: .25rem;
+}
 
-/*=============== SERVICES ===============*/
+.home__buttons span
+{
+  color: var(--first-color);
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-medium);
+}
 
+.home__buttons span:nth-child(2)
+{
+  opacity: .7;
+}
 
-/*=============== WORK ===============*/
+.home__buttons span:nth-child(3)
+{
+  opacity: .4;
+}
 
+.home__images
+{
+  grid-template-columns: 4fr 8fr;
+  column-gap: 1.875rem;
+}
 
-/*=============== LIGHTBOX ===============*/
+.home__group
+{
+  margin-top: 2rem;
+  grid-template-columns: 10fr 2fr;
+  column-gap: 1.875rem;
+}
 
+.home__description
+{
+  font-size: var(--h2-font-size);
+  line-height: 36px;
+  margin-bottom: 2.5rem;
+}
 
-/*=============== PROJECT ===============*/
+.home__description span
+{
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
 
+.home__social
+{
+  display: flex;
+  align-items: center;
+}
 
-/*=============== EXPERIENCE ===============*/
+.home__social-follow
+{
+  color: var(--title-color);
+  font-size: 17px;
+  font-weight: var(--font-medium);
+  padding-right: 8.175rem;
+  position: relative;
+}
 
+.home__social-follow::after
+{
+  content: '';
+  position: absolute;
+  right: 1rem;
+  top: 58%;
+  width: 100px;
+  height: 2px;
+  background-color: hsla(var(--second-hue), 64%, 18%, .15);
+  margin: -1px;
+}
 
-/*=============== CONTACT ===============*/
+.home__social-link
+{
+  display: inline-flex;
+  column-gap: .5rem;
+}
 
+.home__social-link
+{
+  display: inline-flex;
+  align-items: center;
+  padding: 1rem .875rem;
+  border-radius: .75rem;
+  border: 1px solid hsl(var(--second-hue), 64%, 18%, .15);
+  background-color: var(--container-color);
+  color: var(--title-color);
+}
 
-/*=============== FOOTER ===============*/
+.home__social-link img
+{
+  font-size: var(--h2-font-size);
+  text-align: center;
+  transition: .4s;
+}
 
+.home__social-link span
+{
+  display: inline-block;
+  font-weight: var(--font-medium);
+  white-space: nowrap;
+  line-height: 14px;
+  transform: translateX(1rem);
+  max-width: 0;
+  overflow: hidden;
+  transition: 1.2s;
+}
 
-/*=============== BREAKPOINTS ===============*/
+.home__social-link span::after
+{
+  content: '';
+  margin-right: 1rem;
+}
+
+.home__social-link:hover img, .home__social-link:hover span
+{
+  color: var(--first-color);
+}
+
+.home__social-link:hover span
+{
+  max-width: 400px;
+}
+
+.experience__img
+{
+  width: 160px;
+  justify-self: flex-end;
+}
+
+/*  ===== ========== Breakpoints ========== =====   */
+
 /* For large devices */
+
 @media screen and (max-width: 1208px) {}
 
 @media screen and (max-width: 1024px) {}
 
 /* For medium devices */
+
 @media screen and (max-width: 768px) {}
   
 @media screen and (max-width: 576px) { }
 
 /* For small devices */
+
 @media screen and (max-width: 350px) {}
