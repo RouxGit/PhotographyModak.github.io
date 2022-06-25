@@ -1,0 +1,46 @@
+.about__container
+{
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.875rem;
+}
+
+.about.img
+{
+    justify-self: center;
+}
+
+.about__title, .about__subtitle
+{
+    text-align: left;
+}
+
+.about__title
+{
+    margin-bottom: 2.5rem;
+}
+
+.about__description
+{
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+    font-size: 17px;
+    margin-bottom: 1.5rem;
+}
+
+.about__details
+{
+    margin-bottom: 2.5rem;
+}
+
+.about__award
+{
+    grid-template-columns: 4fr 8fr;
+    align-items: center;
+}
+
+.award__title
+{
+    font-size: 17px;
+    font-weight: var(--font-medium);
+    margin-bottom: .5rem;
+}

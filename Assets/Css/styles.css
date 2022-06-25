@@ -16,7 +16,6 @@
   --border-color: hsl(var(--second-hue), 4%, 55%);
   --body-color: hsl(var(--first-hue), 60%, 98%);
   --container-color: #fff;
-
 /*   ===== Typography =====   */
 
 /*.5rem = 8px | 1rem = 16px ...*/
@@ -134,10 +133,10 @@ img
 
 .section
 {
-  padding: 8rem 0 2rem;
+  padding: 7rem 0 2rem;
 }
 
-.section__subtitle, .section__title
+.section__title, .section__subtitle
 {
   text-align: center;
 }
@@ -252,7 +251,6 @@ img
 {
   color: var(--first-color);
 }
-
 
 /*   ===== Change background header =====   */
 
@@ -381,7 +379,7 @@ img
   align-items: center;
   padding: 1rem .875rem;
   border-radius: .75rem;
-  border: 1px solid hsl(var(--second-hue), 64%, 18%, .15);
+  border: 1px solid hsla(var(--second-hue), 64%, 18%, .15);
   background-color: var(--container-color);
   color: var(--title-color);
 }
@@ -425,6 +423,23 @@ img
 {
   width: 160px;
   justify-self: flex-end;
+}
+
+/*  ===== ========== Buttons ========== =====   */
+
+.button {
+  display: inline-block;
+  background-color: var(--first-color);
+  color: var(--container-color);
+  padding: .75rem 1rem;
+  border-radius: .5rem;
+  font-weight: var(--font-medium);
+  transition: .4s;
+}
+
+.button:hover
+{
+  background-color: var(--title-color);
 }
 
 /*  ===== ========== Breakpoints ========== =====   */

@@ -1,0 +1,26 @@
+.project
+{
+  padding: 6.25rem 0;
+  background-image: url('../Img/background-cta.jpg');
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center 85.1688px;
+}
+
+.project__container
+{
+  place-items: center;
+}
+
+.project__title
+{
+  font-size: 2rem;
+  margin-bottom: .25rem;
+}
+
+.project__description
+{
+  font-size: var(--h3-font-size);
+  margin-bottom: 2rem;
+}
